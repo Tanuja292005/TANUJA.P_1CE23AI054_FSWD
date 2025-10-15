@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jinngalala Output</title>
+    <style>
+        #output-img {
+            max-width: 400px;
+            max-height: 400px;
+            margin-top: 20px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Jinngalala</h1>
+    <input type="file" id="img-input" accept="image/*">
+    <br>
+    <img id="output-img" alt="Selected Image">
+    <script>
+        const imgInput = document.getElementById('img-input');
+        const outputImg = document.getElementById('output-img');
+
+        imgInput.addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    outputImg.src = e.target.result;
+                    outputImg.style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            } else {
+                outputImg.style.display = 'none';
+                outputImg.src = '';
+            }
+        });
+    </script>
+</body>
+</html>
