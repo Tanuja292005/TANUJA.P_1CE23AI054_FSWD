@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sequential Red Boxes</title>
+  <style>
+    .box {
+      width: 300px;
+      border: 2px solid red;
+      padding: 20px;
+      margin: 20px auto;
+      font-family: Arial, sans-serif;
+      font-size: 18px;
+      color: #333;
+      display: none;
+    }
+    .box.visible {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+<div class="box" id="box1">Para 1</div>
+<div class="box" id="box2">Para 2</div>
+<div class="box" id="box3">Para 3</div>
+
+<script>
+  const boxes = [
+    document.getElementById('box1'),
+    document.getElementById('box2'),
+    document.getElementById('box3')
+  ];
+
+  let current = 0;
+
+  function showNextBox() {
+    if (current < boxes.length) {
+      boxes[current].classList.add('visible');
+      current++;
+      setTimeout(showNextBox, 1000); // 1 second delay
+    }
+  }
+
+  window.onload = showNextBox;
+</script>
+
+</body>
+</html>
