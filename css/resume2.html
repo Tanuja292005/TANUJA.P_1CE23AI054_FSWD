@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Biography</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f2f5;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 700px;
+      margin: auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    .profile-pic {
+      display: block;
+      margin: 20px auto;
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border: 3px solid #555;
+    }
+    .file-input {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .details {
+      margin: 20px 0;
+      line-height: 1.6;
+    }
+    .details p {
+      font-size: 16px;
+      color: #444;
+    }
+    .social-links {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .social-links a {
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+      color: #0077b5;
+    }
+    .social-links a.youtube {
+      color: #ff0000;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>My Biography</h1>
+    <img id="profileImage" src="https://via.placeholder.com/150" alt="Profile Picture" class="profile-pic"/>
+    <div class="file-input">
+      <input type="file" accept="image/*" onchange="loadImage(event)" />
+    </div>
+    <div class="details">
+      <p><strong>Name:</strong> Your Full Name</p>
+      <p><strong>Birth Date:</strong> January 1, 1990</p>
+      <p><strong>Address:</strong> 123 Main Street, Bengaluru, India</p>
+      <p><strong>Hobby:</strong> Reading, Coding, Traveling</p>
+      <p><strong>Religion:</strong> Your Religion</p>
+    </div>
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+      <a href="https://www.youtube.com/channel/yourchannel" class="youtube" target="_blank">YouTube</a>
+    </div>
+  </div>
+
+  <script>
+    function loadImage(event) {
+      const image = document.getElementById('profileImage');
+      image.src = URL.createObjectURL(event.target.files[0]);
+    }
+  </script>
+</body>
+</html>
