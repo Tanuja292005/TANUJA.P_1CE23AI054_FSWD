@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Do While Loop Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    #output {
+      margin-top: 20px;
+      font-weight: bold;
+      color: darkblue;
+    }
+  </style>
+</head>
+<body>
+  <h2>Display Numbers from 1 to 10 using Do While Loop</h2>
+  <button onclick="displayNumbers()">Show Numbers</button>
+
+  <div id="output"></div>
+
+  <script>
+    function displayNumbers() {
+      let i = 1;
+      let result = "";
+
+      do {
+        result += i + " ";
+        i++;
+      } while (i <= 10);
+
+      document.getElementById("output").innerText = result;
+    }
+  </script>
+</body>
+</html>
